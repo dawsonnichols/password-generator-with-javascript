@@ -10,6 +10,7 @@ var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", writePassword);
 
+
 const pass_array = {
     
     lowerCase: 'abcdefghijklmnopqrstuvxwyz',
@@ -18,39 +19,42 @@ const pass_array = {
     symbols: "~`!@#$%^&*()-_=+}]{[:;",
 };
 function generatePassword () {
-
-    var passwordFinalSet = ""; 
+    let passwordFinalSet = []; 
+    let passwordFinalOutcome = []; 
     
     var passLength = window.prompt("How long would you like your password to be? (Between 8 and 256 characters).");
     
     var lowerCase = window.confirm("Would you like to include lowercase letters?"); 
     if (lowerCase) {
-        passwordFinalSet += pass_array.lowerCase; 
+        passwordFinalSet.push(lowerCase); 
+        console.log(passwordFinalSet.push(lowerCase))
     };
 
     var upperCase = window.confirm("Would you like to include uppercase letters?"); 
     if (upperCase) {
-        passwordFinalSet += pass_array.upperCase;
+        passwordFinalSet.push(upperCase);
     };
 
     var numbers = window.confirm("Would you like to include numbers?");
     if (numbers) {
-        passwordFinalSet += pass_array.numbers;
+        passwordFinalSet.push(numbers);
     };
 
     var symbols = window.confirm("Would you like to include symbols?");
     if (symbols) {
-        passwordFinalSet += pass_array.symbols;
+        passwordFinalSet.push(symbols);
     }; 
 
-    var finalVar = "";
-    for (let i = 0; i < passLength; i++) {
-        finalVar += passwordFinalSet[Math.floor(Math.random() * passwordFinalSet.passLength)]
-    }
-    return finalVar;
+    // var finalVar = "";
+    // for (let i = 0; i < passLength; i++) {
+        passwordFinalOutcome.push(passwordFinalSet[Math.floor(Math.random() * passLength)]);
+        // finalVar += passwordFinalSet[Math.floor(Math.random() * passwordFinalSet.passLength)]
+    // }
+    // return finalVar;
+    return passwordFinalOutcome; 
 
 } 
-console.log(generatePassword()); 
+
 
     
 
