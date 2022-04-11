@@ -1,5 +1,6 @@
 # password-generator-with-javascript
 by Dawson Nichols
+Live Link: https://dawsonnichols.github.io/password-generator-with-javascript/
 
 Made with Javascript, HTML, and CSS.
     Generator function wrriten by Dawson Nichols.
